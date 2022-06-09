@@ -2,13 +2,19 @@ import React from "react";
 import { useGetAllProductsQuery } from "../features/productApi";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../features/cartSlice";
+import { useHistory } from "react-router-dom";
 
 const Home = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
   const dispatch = useDispatch();
 
+  const history = useHistory();
+
   const handleAddToCart = (item) => {
     dispatch(addToCart(item));
+
+    //redirect to cart after successfull addition to cart
+    history.push("/cart");
   };
 
   return (
