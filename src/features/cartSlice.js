@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const initialState = {
   cartItems: [],
@@ -17,9 +18,15 @@ export const cartSlice = createSlice({
 
       if (itemIndex >= 0) {
         state.cartItems[itemIndex].cartQuantity += 1;
+        toast.success("Product quanity increased", {
+          position: "bottom-left",
+        });
       } else {
         const tempCartItemm = { ...action.payload, cartQuantity: 1 };
         state.cartItems.push(tempCartItemm);
+        toast.success("Item Added to Cart", {
+          position: "bottom-left",
+        });
       }
     },
   },

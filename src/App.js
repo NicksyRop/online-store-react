@@ -6,6 +6,11 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import NavBar from "./components/NavBar";
 import Cart from "./components/Cart";
 import Home from "./components/Home";
@@ -15,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <ToastContainer />
         <NavBar />
         <Switch>
           <Route path="/cart" exact>
