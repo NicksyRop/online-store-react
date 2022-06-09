@@ -1,6 +1,6 @@
 import React from "react";
 import { useGetAllProductsQuery } from "../features/productApi";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart } from "../features/cartSlice";
 import { useHistory } from "react-router-dom";
 
