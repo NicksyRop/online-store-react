@@ -1,11 +1,18 @@
 import React from "react";
 import { useGetAllProductsQuery } from "../features/productApi";
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "../features/cartSlice";
 
 const Home = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (item) => {
+    dispatch(addToCart(item));
+  };
 
   return (
-    <div className="container">
+    <div className="home-container">
       {isLoading ? (
         <p>Loading</p>
       ) : error ? (
@@ -13,7 +20,7 @@ const Home = () => {
       ) : (
         <>
           <h2>New Arrivals</h2>
-          <div className="product">
+          <div className="products">
             {data?.map((item) => (
               <div key={item.id} className="product">
                 <h3>{item.name}</h3>
@@ -22,7 +29,9 @@ const Home = () => {
                   <span className="desc">{item.desc}</span>
                   <span className="price">${item.price}</span>
                 </div>
-                <button>Add To Cart</button>
+                <button onClick={() => handleAddToCart(item)}>
+                  Add To Cart
+                </button>
               </div>
             ))}
           </div>

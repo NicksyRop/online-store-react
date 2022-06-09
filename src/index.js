@@ -4,10 +4,11 @@ import App from "./App";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import { productApi } from "./features/productApi";
-import { produtsReducer } from "./features/productSlice";
+import cartReducer from "./features/cartSlice";
 
 const store = configureStore({
   reducer: {
+    cart: cartReducer,
     [productApi.reducerPath]: productApi.reducer,
   },
 
