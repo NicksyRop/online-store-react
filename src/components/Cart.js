@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import {
@@ -6,11 +6,16 @@ import {
   removeFromCart,
   addToCart,
   decreaseCartItem,
+  getTotals,
 } from "../features/cartSlice";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getTotals());
+  }, [cart]);
 
   const handleRemoveFromCart = (product) => {
     dispatch(removeFromCart(product));
@@ -25,7 +30,7 @@ const Cart = () => {
   };
 
   const handleDecreaseProduct = (item) => {
-    decreaseCartItem(item);
+    dispatch(decreaseCartItem(item));
   };
   return (
     <div className="cart-container">
@@ -76,7 +81,9 @@ const Cart = () => {
                   </div>
                   <div className="cart-product-price">${cartItem.price}</div>
                   <div className="cart-product-quantity">
-                    <button onClick={() => handleDecreaseProduct()}>-</button>
+                    <button onClick={() => handleDecreaseProduct(cartItem)}>
+                      -
+                    </button>
                     <div className="count">{cartItem.cartQuantity}</div>
                     <button onClick={() => handleAddToCart(cartItem)}>+</button>
                   </div>
