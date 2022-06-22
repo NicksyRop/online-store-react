@@ -25,5 +25,8 @@ Demo can be viewed.[here] (https://www.loom.com/share/1acc78c0ccc849519734e5fb1e
 * Clone or download the repository
 * Run npm install
 * Run npm start
+## Credits
+Collaborator
+* [Michael Selunani] (https://github.com/mse-lunani)
 ## License
 MIT
