@@ -23,6 +23,9 @@ Demo can be viewed [here](https://www.loom.com/share/1acc78c0ccc849519734e5fb1ee
 ### Cart
 ![cart](https://res.cloudinary.com/kenya-power/image/upload/v1656066857/online-shop/screeens/Screenshot_63_ftio12.png)
 
+### clear cart
+![cart](https://res.cloudinary.com/kenya-power/image/upload/v1656066857/online-shop/screeens/Screenshot_60_mq2m4j.png)
+
 ### Checkout
 
 
