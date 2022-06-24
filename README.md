@@ -27,6 +27,7 @@ Demo can be viewed [here](https://www.loom.com/share/1acc78c0ccc849519734e5fb1ee
 ![cart](https://res.cloudinary.com/kenya-power/image/upload/v1656067338/online-shop/screeens/Screenshot_66_tvcig0.png)
 
 ### Checkout
+![checkout](https://res.cloudinary.com/kenya-power/image/upload/v1656068484/online-shop/Screenshot_68_igl42y.png)
 
 
 ## Technologies Used
