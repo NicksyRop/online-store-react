@@ -32,6 +32,7 @@ const Cart = () => {
   const handleDecreaseProduct = (item) => {
     dispatch(decreaseCartItem(item));
   };
+  console.log(cart);
   return (
     <div className="cart-container">
       <h2>Shopping Cart</h2>
@@ -103,7 +104,10 @@ const Cart = () => {
                 <span className="amount">${cart.cartTotalAmount}</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
-              <button>Check out</button>
+              <Link to="/checkout">
+                <button>Check out</button>
+              </Link>
+
               <div className="continue-shopping">
                 <Link to="/">
                   <svg

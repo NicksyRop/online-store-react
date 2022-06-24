@@ -15,6 +15,7 @@ import NavBar from "./components/NavBar";
 import Cart from "./components/Cart";
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
+import Checkout from "./components/Checkout";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
         <Switch>
           <Route path="/cart" exact>
             <Cart />
+          </Route>
+          <Route path="/checkout" exact>
+            <Checkout />
           </Route>
           <Route path="/not-found">
             <NotFound />
